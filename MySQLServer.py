@@ -9,7 +9,7 @@ my_db = mysql.connector.connect(
 
 try:
     cursor = my_db.cursor()
-    create_db = cursor.execute("CREATE DATABASE alx_book_store")
+    create_db = cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
     print("Database 'alx_book_store' created successfully!")
     cursor.close()
     my_db.close()
