@@ -10,25 +10,25 @@ price DOUBLE,
 publication_date DATE
 )
 
-CREATE TABLE IF NOT EXISTS authors (
+CREATE TABLE IF NOT EXISTS Authors (
 author_id PRIMARY KEY,
 author_name VARCHAR(215)
 )
 
-CREATE TABLE IF NOT EXISTS customers (
+CREATE TABLE IF NOT EXISTS Customers (
 customer_id PRIMARY KEY,
 customer_name VARCHAR(215),
 email VARCHAR(215),
 address TEXT
 )
 
-CREATE TABLE IF NOT EXISTS orders (
+CREATE TABLE IF NOT EXISTS Orders (
 order_id PRIMARY KEY,
 FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
 order_date DATE
 )
 
-CREATE TABLE IF NOT EXISTS order_details (
+CREATE TABLE IF NOT EXISTS Order_details (
 orderdetailid PRIMARY KEY,
 order_id REFERENCES orders(order_id),
 FOREIGN KEY (book_id) REFERENCES books(book_id),
