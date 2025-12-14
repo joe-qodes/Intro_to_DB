@@ -1,4 +1,5 @@
 import mysql.connector
+from mysql.connector import Error
 
 my_db = mysql.connector.connect(
     host = "localhost",
@@ -13,8 +14,9 @@ try:
     print("Database 'alx_book_store' created successfully!")
     cursor.close()
     my_db.close()
-except:
-    raise FileExistsError("The database already exists")
+except Error as e:
+        print("Error while connecting to MySQL:", e)
+
 
 
 # my_db = mysql.connector.connect(
