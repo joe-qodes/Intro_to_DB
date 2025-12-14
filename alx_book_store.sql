@@ -29,7 +29,7 @@ order_date DATE
 )
 
 CREATE TABLE IF NOT EXISTS Order_details (
-orderdetailid PRIMARY KEY,
+orderdetailid INT PRIMARY KEY,
 FOREIGN KEY (order_id) REFERENCES Orders(order_id),
 FOREIGN KEY (book_id) REFERENCES Books(book_id),
 quantity DOUBLE
